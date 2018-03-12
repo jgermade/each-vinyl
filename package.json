@@ -1,0 +1,13 @@
+{
+  "name": "each-vinyl",
+  "version": "1.0.0",
+  "description": "Each vinyl wrapper for gulp",
+  "main": "each-vinyl.js",
+  "author": "Jesús Germade <jesus@germade.es>",
+  "license": "MIT",
+  "dependencies": {
+    "plugin-error": "^1.0.1",
+    "safe-buffer": "^5.1.1",
+    "through2": "^2.0.3"
+  }
+}
