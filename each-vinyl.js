@@ -4,7 +4,9 @@ const through = require('through2');
 const Buffer = require('safe-buffer').Buffer;
 
 module.exports = function eachVinyl (plugin_name, fn) {
-	return function compile(data) {
+	return function () {
+		var args = arguments;
+
 		return through.obj(function (file, enc, cb) {
 			if( file.isNull() ) {
 				cb(null, file);
@@ -17,7 +19,7 @@ module.exports = function eachVinyl (plugin_name, fn) {
 			}
 
 			try {
-				fn.call(this, file);
+				fn.apply( this, [file].concat(args) );
 				this.push(file);
 			} catch (err) {
 				this.emit('error', new PluginError(plugin_name, err, { fileName: file.path }));
