@@ -25,7 +25,7 @@ module.exports = function eachVinyl (plugin_name, fn) {
 				this.emit('error', new PluginError(plugin_name, err, { fileName: file.path }));
 			}
 
-			cb();
+			cb(null, file);
 		});
 	}
 }
