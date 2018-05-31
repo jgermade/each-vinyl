@@ -1,7 +1,6 @@
 
 const PluginError = require('plugin-error');
 const through = require('through2');
-const Buffer = require('safe-buffer').Buffer;
 
 module.exports = function eachVinyl (plugin_name, fn) {
 	return function () {
